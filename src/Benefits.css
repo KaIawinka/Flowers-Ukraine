@@ -15,9 +15,8 @@
   gap: 8px;
 }
 
-/* ─── CARD ─── */
 .benefits-card {
-  background-color: #956D84cc; /* Maroon ~80% */
+  background-color: #956D84cc;
   border-radius: 8px;
   padding: 28px 24px;
   display: flex;
@@ -28,7 +27,6 @@
   overflow: hidden;
 }
 
-/* Left card — text left, icon right */
 .benefits-card--left {
   flex-direction: row;
   align-items: flex-start;
@@ -46,14 +44,12 @@
   color: #828282;
 }
 
-/* Center card — icon top center */
 .benefits-card--center {
   align-items: center;
   text-align: center;
   background-color: #7a5a70;
 }
 
-/* Right card — text right, icon right */
 .benefits-card--right {
   flex-direction: row-reverse;
   align-items: flex-start;
@@ -73,7 +69,6 @@
   text-align: right;
 }
 
-/* ─── CONTENT ─── */
 .benefits-icon {
   width: 64px;
   height: 64px;

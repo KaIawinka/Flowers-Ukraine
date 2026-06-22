@@ -4,7 +4,6 @@ function ProductCard({ img, title, price, oldPrice, discount, isTop, isFavorite 
   return (
     <div className="pcard">
       <div className="pcard-img-wrap">
-        {/* ЗАМЕНИ: src={img} — фото товара */}
         <img src={img} alt={title} className="pcard-img" />
 
         {discount && (
@@ -12,7 +11,6 @@ function ProductCard({ img, title, price, oldPrice, discount, isTop, isFavorite 
         )}
 
         <button className="pcard-fav" aria-label="в избранное">
-          {/* ЗАМЕНИ: иконка сердца */}
           <img src="/heart-icon.png" alt="favourite" />
         </button>
 

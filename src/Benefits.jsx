@@ -2,19 +2,19 @@ import './Benefits.css'
 
 const items = [
   {
-    icon: '/icon-photo.png',   // иконка рамки/фото
+    icon: '/icon-photo.png',
     title: 'Фото доставок\nнаших букетов',
     desc: 'Безупречное качество обслуживания и доставка в любую точку города',
     align: 'left',
   },
   {
-    icon: '/icon-video.png',   // иконка камеры
+    icon: '/icon-video.png',
     title: 'Видео отчеты клиентов',
     desc: 'Наши счастливые клиенты с букетами от Flowers-Ukraine',
     align: 'center',
   },
   {
-    icon: '/icon-gift.png',    // иконка подарка
+    icon: '/icon-gift.png',
     title: 'Подарок\nкаждому клиенту',
     desc: 'К каждому заказу мы прилагаем комплимент от компании в виде маленького презента',
     align: 'right',

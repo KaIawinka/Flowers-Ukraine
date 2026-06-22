@@ -13,7 +13,6 @@
   padding-bottom: 16px;
 }
 
-/* ─── IMAGE ─── */
 .pcard-img-wrap {
   position: relative;
   width: 100%;
@@ -77,7 +76,6 @@
   letter-spacing: 0.5px;
 }
 
-/* ─── BODY ─── */
 .pcard-body {
   padding: 0 12px;
   display: flex;
@@ -126,7 +124,6 @@
   color: var(--Maroon);
 }
 
-/* ─── BUTTONS ─── */
 .pcard-btn {
   margin: 4px 12px 0;
   background-color: var(--Maroon);

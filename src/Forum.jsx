@@ -30,7 +30,6 @@ function Forum() {
         <div className="forum-grid">
           {articles.map((a) => (
             <div key={a.title} className="forum-card">
-              {/* ЗАМЕНИ: src={a.img} — фото статьи */}
               <img src={a.img} alt={a.title} className="forum-img" />
               <div className="forum-overlay">
                 <h3 className="forum-card-title">{a.title}</h3>
