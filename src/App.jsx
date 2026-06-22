@@ -5,9 +5,6 @@ import ProductSection from './ProductSection'
 import Forum from './Forum'
 import Footer from './Footer'
 
-// ─── Данные товаров ───────────────────────────────────────────────
-// ЗАМЕНИ img на реальные пути к фотографиям
-
 const sales = [
   { id: 1, img: '/product-1.jpg', title: '101 красная роза',         price: 2280, oldPrice: 2800, discount: 19, isTop: true },
   { id: 2, img: '/product-2.jpg', title: '25 розовых пионовидных роз',price: 1680, oldPrice: 2800, discount: 10, isTop: true },
