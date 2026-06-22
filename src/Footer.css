@@ -85,7 +85,7 @@
 .footer-pay {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .footer-pay-label {
@@ -95,6 +95,15 @@
 }
 
 .footer-pay-icon {
-  height: 24px;
+  height: 50px;
+	width: 50px;
   object-fit: contain;
+}
+
+.pay-liqpay {
+	width: 100px;
+}
+
+.pay-liqpay-logo {
+	width: 30px;
 }

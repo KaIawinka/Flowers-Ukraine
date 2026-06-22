@@ -48,7 +48,8 @@ function Footer() {
           <span className="footer-copy">Copyright © 2021. Все права защищены</span>
           <div className="footer-pay">
             <span className="footer-pay-label">Способы оплаты:</span>
-            <img src="/pay-liqpay.png" alt="LiqPay" className="footer-pay-icon" />
+            <img src="/pay-liqpay-logo.png" alt="LiqPay" className="footer-pay-icon pay-liqpay-logo" />
+            <img src="/pay-liqpay.png" alt="LiqPay" className="footer-pay-icon pay-liqpay" />
             <img src="/pay-mastercard.png" alt="Mastercard" className="footer-pay-icon" />
             <img src="/pay-maestro.png" alt="Maestro" className="footer-pay-icon" />
             <img src="/pay-visa-electron.png" alt="Visa Electron" className="footer-pay-icon" />

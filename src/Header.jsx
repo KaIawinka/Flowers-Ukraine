@@ -94,11 +94,11 @@ function Header() {
               <div className="header-social-icon">
                 <img src="/social-instagram.png" alt="instagram" />
               </div>
-              <div className="header-social-icon">
+              <div className="header-social-icon telegram">
                 <img src="/social-telegram.png" alt="telegram" />
               </div>
               <div className="header-social-icon">
-                <img src="/social-viber.png" alt="viber" />
+                <img src="/social-facebook.png" alt="facebook" />
               </div>
             </div>
 

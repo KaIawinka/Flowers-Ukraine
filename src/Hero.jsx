@@ -1,10 +1,10 @@
 import './Hero.css'
 
 const categories = [
-  { title: 'Розы',              img: '/cat-roses.jpg' },
-  { title: 'Подарки',           img: '/cat-gifts.jpg' },
-  { title: 'Подарочные корзины',img: '/cat-baskets.jpg',  yellow: true },
-  { title: 'Цветы в коробке',   img: '/cat-box.jpg' },
+  { title: 'Розы',              img: '/cat-roses.png' },
+  { title: 'Подарки',           img: '/cat-gifts.png' },
+  { title: 'Подарочные корзины',img: '/cat-baskets.png',  yellow: true },
+  { title: 'Цветы в коробке',   img: '/cat-box.png' },
 ]
 
 function Hero() {
