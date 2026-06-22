@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+	--Maroon: #956D84;
+	--header-fon: #333333;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "MuseoModerno", sans-serif;
+}
+
+header {
+	background-color: var(--header-fon);
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.haeder-nav-main {
+	display: flex;
+	gap: 229px;
+}
+
+header nav {
+	display: flex;
+	gap: 64px;
+}
+
+.header-nav-div {
+	display: flex;
+	gap: 20px;
+}
+
+.header-nav-span {
+	color: var(--Maroon);
+	font-weight: 300;
+	line-height: 18px;
+}
+
+.header-nav-h5 {
+	color: white;
+	font-weight: 300;
+	line-height: 18px;
+	font-size: 16px;
+}
+
+.header-nav-div-div {
+	display: flex;
+	gap: 7px;
+}
+
+.header-nav-div-div button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 8px;
+	font-weight: 300;
+}
+
+.header-nav-zakladki div {
+	position: absolute;
+	top: 10px;
+	color: var(--header-fon);
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	opacity: 70%;
+	border-radius: 59%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.header-nav-zakladki img {
+	position: relative;
+	right: 13px;
+}
+
+.header-nav-dostavka {
+	width: 22px;
+	height: 22px;
+}
+
+.header-nav-main-aside {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.header-nav-main-aside div {
+	color: var(--Maroon);
+}
