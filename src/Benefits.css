@@ -1,0 +1,112 @@
+:root {
+  --Maroon: #956D84;
+}
+
+.benefits {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.benefits-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+/* ─── CARD ─── */
+.benefits-card {
+  background-color: #956D84cc; /* Maroon ~80% */
+  border-radius: 8px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left card — text left, icon right */
+.benefits-card--left {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  color: #333;
+}
+
+.benefits-card--left .benefits-title {
+  color: #333;
+}
+
+.benefits-card--left .benefits-desc {
+  color: #828282;
+}
+
+/* Center card — icon top center */
+.benefits-card--center {
+  align-items: center;
+  text-align: center;
+  background-color: #7a5a70;
+}
+
+/* Right card — text right, icon right */
+.benefits-card--right {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  color: #333;
+}
+
+.benefits-card--right .benefits-title {
+  color: #333;
+  text-align: right;
+}
+
+.benefits-card--right .benefits-desc {
+  color: #828282;
+  text-align: right;
+}
+
+/* ─── CONTENT ─── */
+.benefits-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.benefits-card--center .benefits-icon {
+  width: 72px;
+  height: 72px;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.benefits-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: pre-line;
+  color: #fff;
+}
+
+.benefits-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+
+.benefits-card--center .benefits-title {
+  color: #fff;
+}
+
+.benefits-card--center .benefits-desc {
+  color: rgba(255,255,255,0.85);
+}
