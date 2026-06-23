@@ -4,9 +4,8 @@ function Benefits() {
   return (
     <section className="benefits">
       <div className="benefits-inner">
-
         <div className="benefits-card benefits-card--left">
-					<img src="/benefits-card--left.png" alt="benefits-card--left" className='img-spas--left'/>
+          <img src="/benefits-card--left.png" alt="" className="benefits-bg benefits-bg--left" />
           <div className="benefits-text">
             <h3 className="benefits-title">Фото доставок{'\n'}наших букетов</h3>
             <p className="benefits-desc">Безупречное качество обслуживания и доставка в любую точку города</p>
@@ -25,7 +24,7 @@ function Benefits() {
         </div>
 
         <div className="benefits-card benefits-card--right">
-					<img src="benefits-card--right.png" alt="benefits-card--right" className='img-spas--right'/>
+          <img src="/benefits-card--right.png" alt="" className="benefits-bg benefits-bg--right" />
           <div className="benefits-icon-wrap">
             <img src="/Gift.png" alt="" className="benefits-icon" />
           </div>
@@ -34,7 +33,6 @@ function Benefits() {
             <p className="benefits-desc">К каждому заказу мы прилагаем комплимент от компании в виде маленького презента</p>
           </div>
         </div>
-
       </div>
     </section>
   )

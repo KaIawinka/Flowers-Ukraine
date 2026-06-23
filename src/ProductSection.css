@@ -4,18 +4,16 @@
 
 .psection {
   max-width: 1500px;
-  margin: 0 auto;
-  padding: 24px 24px;
+  margin: 0 auto 24px;
+  padding: 24px;
   font-family: "MuseoModerno", sans-serif;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 24px;
 }
 
 .psection-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   margin-bottom: 20px;
 }
 
@@ -57,12 +55,69 @@
 
 .psection-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
-@media (max-width: 900px) {
+.psection-dots {
+  display: none;
+}
+
+@media (max-width: 1000px) {
   .psection-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .psection {
+    padding: 0 27px 64px;
+    margin: 0;
+  }
+
+  .psection-header {
+    justify-content: center;
+    margin-bottom: 46px;
+  }
+
+  .psection-title {
+    font-size: 28px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .psection-arrows {
+    display: none;
+  }
+
+  .psection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .psection-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 26px;
+  }
+
+  .psection-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--Maroon);
+    opacity: 0.85;
+  }
+
+  .psection-dots .active {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--Maroon);
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 5px var(--Maroon);
   }
 }

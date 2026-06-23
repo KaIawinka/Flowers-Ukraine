@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   margin-bottom: 20px;
 }
 
@@ -30,6 +31,7 @@
   font-size: 14px;
   color: #828282;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .forum-all:hover {
@@ -38,8 +40,13 @@
 
 .forum-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+}
+
+.forum-dots,
+.forum-all-mobile {
+  display: none;
 }
 
 .forum-card {
@@ -47,11 +54,12 @@
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
+  min-height: 280px;
 }
 
 .forum-img {
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -61,8 +69,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--Maroon);
-  opacity: 0.9;
+  background: rgba(149, 109, 132, 0.92);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -79,6 +86,111 @@
 .forum-card-desc {
   font-size: 12px;
   font-weight: 300;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .forum-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .forum {
+    padding: 22px 0 70px;
+  }
+
+  .forum-inner {
+    padding: 0 38px;
+  }
+
+  .forum-header {
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  .forum-title {
+    font-size: 29px;
+    line-height: 1;
+    color: #000;
+  }
+
+  .forum-all-desktop {
+    display: none;
+  }
+
+  .forum-grid {
+    display: block;
+  }
+
+  .forum-card {
+    display: none;
+    min-height: 0;
+    overflow: visible;
+    border-radius: 0;
+    background: var(--Maroon);
+  }
+
+  .forum-card:first-child {
+    display: block;
+  }
+
+  .forum-img {
+    width: calc(100% - 34px);
+    height: 235px;
+    margin: -32px auto 0;
+    object-fit: cover;
+  }
+
+  .forum-overlay {
+    position: static;
+    padding: 12px 14px 14px;
+    background: var(--Maroon);
+  }
+
+  .forum-card-title {
+    font-size: 16px;
+    line-height: 1.32;
+    font-weight: 400;
+  }
+
+  .forum-card-desc {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .forum-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 24px;
+  }
+
+  .forum-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--Maroon);
+    opacity: 0.85;
+  }
+
+  .forum-dots .active {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--Maroon);
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 5px var(--Maroon);
+  }
+
+  .forum-all-mobile {
+    display: block;
+    margin-top: 36px;
+    color: var(--Maroon);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+  }
 }

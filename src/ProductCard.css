@@ -11,6 +11,7 @@
   border-radius: 8px;
   overflow: hidden;
   padding-bottom: 16px;
+  min-width: 0;
 }
 
 .pcard-img-wrap {
@@ -18,6 +19,7 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  background: #f7f7f7;
 }
 
 .pcard-img {
@@ -57,13 +59,14 @@
 .pcard-fav img {
   width: 22px;
   height: 22px;
+  display: block;
 }
 
 .pcard-top {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(149, 109, 132, 0.4);
+  background: rgba(149, 109, 132, 0.72);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -73,7 +76,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.5px;
 }
 
 .pcard-body {
@@ -86,7 +88,6 @@
 .pcard-stars {
   color: #F5C518;
   font-size: 13px;
-  letter-spacing: 2px;
 }
 
 .pcard-info {
@@ -102,6 +103,7 @@
   color: #333;
   line-height: 1.3;
   flex: 1;
+  min-width: 0;
 }
 
 .pcard-prices {
@@ -125,7 +127,7 @@
 }
 
 .pcard-btn {
-  margin: 4px 12px 0;
+  margin: auto 12px 0;
   background-color: var(--Maroon);
   color: #fff;
   border: none;
@@ -149,4 +151,144 @@
   color: #828282;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.pcard-cart {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .pcard {
+    gap: 0;
+    border: 1px solid #d7bdcb;
+    border-radius: 0;
+    box-shadow: 0 6px 12px rgba(149, 109, 132, 0.12);
+    padding-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .pcard-img-wrap {
+    aspect-ratio: 1 / 1.17;
+    background: #fff;
+  }
+
+  .pcard-img {
+    padding: 14px 10px 0;
+    object-fit: contain;
+  }
+
+  .pcard-discount {
+    top: 7px;
+    left: 8px;
+    width: 39px;
+    height: 39px;
+    border-style: dashed;
+    border-color: #ff2d2d;
+    color: #333;
+    font-size: 11px;
+    font-weight: 400;
+    background: #fff;
+  }
+
+  .pcard-fav {
+    top: 8px;
+    right: 8px;
+  }
+
+  .pcard-fav img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .pcard-top {
+    width: 43px;
+    height: 43px;
+    right: 7px;
+    bottom: 7px;
+    color: #9f7890;
+    background: #dfcdd7;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .pcard-body {
+    padding: 8px 10px 0;
+  }
+
+  .pcard-stars {
+    color: #F5C518;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  .pcard-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .pcard-title {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .pcard-prices {
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pcard-old {
+    font-size: 13px;
+    color: #c6c6c6;
+  }
+
+  .pcard-price {
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  .pcard-actions {
+    position: relative;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: 0 8px;
+  }
+
+  .pcard-btn {
+    display: none;
+  }
+
+  .pcard-quick {
+    position: absolute;
+    left: 9px;
+    bottom: 4px;
+    font-size: 11px;
+    color: #777;
+  }
+
+  .pcard-cart {
+    display: flex;
+    position: absolute;
+    right: 9px;
+    bottom: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--Maroon);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pcard-cart img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
 }

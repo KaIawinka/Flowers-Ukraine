@@ -1,16 +1,15 @@
 import './Hero.css'
 
 const categories = [
-  { title: 'Розы',              img: '/cat-roses.png' },
-  { title: 'Подарки',           img: '/cat-gifts.png' },
-  { title: 'Подарочные корзины',img: '/cat-baskets.png',  yellow: true },
-  { title: 'Цветы в коробке',   img: '/cat-box.png' },
+  { title: 'Розы', img: '/cat-roses.png' },
+  { title: 'Подарки', img: '/cat-gifts.png' },
+  { title: 'Подарочные корзины', img: '/cat-baskets.png', yellow: true },
+  { title: 'Цветы в коробке', img: '/cat-box.png' },
 ]
 
 function Hero() {
   return (
     <section className="hero">
-
       <div className="hero-banner">
         <img src="/hero-banner.jpg" alt="баннер" className="hero-banner-img" />
         <div className="hero-banner-text">
@@ -33,7 +32,6 @@ function Hero() {
           </div>
         ))}
       </div>
-
     </section>
   )
 }

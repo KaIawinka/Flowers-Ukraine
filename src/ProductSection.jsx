@@ -25,7 +25,7 @@ function ProductSection({ title, products }) {
             className="psection-arrow"
             onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
             disabled={page === totalPages - 1}
-            aria-label="вперёд"
+            aria-label="вперед"
           >
             ›
           </button>
@@ -36,6 +36,14 @@ function ProductSection({ title, products }) {
         {visible.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}
+      </div>
+
+      <div className="psection-dots" aria-hidden="true">
+        <span className="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
   )

@@ -22,8 +22,13 @@ const nav = [
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-inner">
+      <div className="footer-map">
+        <div className="footer-map-card">
+          <img src="/Flowers-Ukraine.png" alt="Flowers Ukraine" />
+        </div>
+      </div>
 
+      <div className="footer-inner">
         <div className="footer-logo">
           <img src="/Flowers-Ukraine.png" alt="Flowers Ukraine" className="footer-logo-img" />
         </div>
@@ -41,12 +46,20 @@ function Footer() {
           </div>
         ))}
 
+        <div className="footer-pay footer-pay-mobile">
+          <img src="/pay-mastercard.png" alt="Mastercard" className="footer-pay-icon" />
+          <img src="/pay-maestro.png" alt="Maestro" className="footer-pay-icon" />
+          <img src="/pay-visa-electron.png" alt="Visa Electron" className="footer-pay-icon" />
+          <img src="/pay-visa.png" alt="Visa" className="footer-pay-icon" />
+          <img src="/pay-liqpay-logo.png" alt="LiqPay" className="footer-pay-icon pay-liqpay-logo" />
+          <img src="/pay-liqpay.png" alt="LiqPay" className="footer-pay-icon pay-liqpay" />
+        </div>
       </div>
 
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
           <span className="footer-copy">Copyright © 2021. Все права защищены</span>
-          <div className="footer-pay">
+          <div className="footer-pay footer-pay-desktop">
             <span className="footer-pay-label">Способы оплаты:</span>
             <img src="/pay-liqpay-logo.png" alt="LiqPay" className="footer-pay-icon pay-liqpay-logo" />
             <img src="/pay-liqpay.png" alt="LiqPay" className="footer-pay-icon pay-liqpay" />

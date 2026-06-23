@@ -1,6 +1,6 @@
 import './ProductCard.css'
 
-function ProductCard({ img, title, price, oldPrice, discount, isTop, isFavorite }) {
+function ProductCard({ img, title, price, oldPrice, discount, isTop }) {
   return (
     <div className="pcard">
       <div className="pcard-img-wrap">
@@ -11,7 +11,7 @@ function ProductCard({ img, title, price, oldPrice, discount, isTop, isFavorite 
         )}
 
         <button className="pcard-fav" aria-label="в избранное">
-          <img src="/heart-icon.png" alt="favourite" />
+          <img src="/heart-icon.png" alt="" />
         </button>
 
         {isTop && <span className="pcard-top">TOP</span>}
@@ -28,8 +28,13 @@ function ProductCard({ img, title, price, oldPrice, discount, isTop, isFavorite 
         </div>
       </div>
 
-      <button className="pcard-btn">Заказать</button>
-      <a className="pcard-quick" href="#">Быстрый заказ</a>
+      <div className="pcard-actions">
+        <button className="pcard-btn">Заказать</button>
+        <a className="pcard-quick" href="#">Быстрый заказ</a>
+        <button className="pcard-cart" aria-label="добавить в корзину">
+          <img src="/cart-icon.png" alt="" />
+        </button>
+      </div>
     </div>
   )
 }

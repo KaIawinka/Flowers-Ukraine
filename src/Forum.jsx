@@ -4,17 +4,17 @@ const articles = [
   {
     img: '/forum-1.png',
     title: 'Какие цветы под запретом: что нельзя дарить',
-    desc: 'Осведомленности в сфере новых трендов цветочного дизайна и знакомства с работами...',
+    desc: 'Осведомленность в сфере новых трендов цветочного дизайна и знакомство с работами...',
   },
   {
     img: '/forum-2.png',
     title: 'Как сохранить букет свежим: советы и рекомендации',
-    desc: 'Осведомленности в сфере новых трендов цветочного дизайна и знакомства с работами...',
+    desc: 'Осведомленность в сфере новых трендов цветочного дизайна и знакомство с работами...',
   },
   {
     img: '/forum-3.png',
-    title: 'Цветочный этикет — как правильно дарить цветы',
-    desc: 'Осведомленности в сфере новых трендов цветочного дизайна и знакомства с работами...',
+    title: 'Цветочный этикет: как правильно дарить цветы',
+    desc: 'Осведомленность в сфере новых трендов цветочного дизайна и знакомство с работами...',
   },
 ]
 
@@ -24,20 +24,30 @@ function Forum() {
       <div className="forum-inner">
         <div className="forum-header">
           <h2 className="forum-title">Форум</h2>
-          <a href="#" className="forum-all">Все новости »</a>
+          <a href="#" className="forum-all forum-all-desktop">Все новости »</a>
         </div>
 
         <div className="forum-grid">
-          {articles.map((a) => (
-            <div key={a.title} className="forum-card">
-              <img src={a.img} alt={a.title} className="forum-img" />
+          {articles.map((article) => (
+            <div key={article.title} className="forum-card">
+              <img src={article.img} alt={article.title} className="forum-img" />
               <div className="forum-overlay">
-                <h3 className="forum-card-title">{a.title}</h3>
-                <p className="forum-card-desc">{a.desc}</p>
+                <h3 className="forum-card-title">{article.title}</h3>
+                <p className="forum-card-desc">{article.desc}</p>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="forum-dots" aria-hidden="true">
+          <span className="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <a href="#" className="forum-all forum-all-mobile">Все новости</a>
       </div>
     </section>
   )
