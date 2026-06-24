@@ -239,7 +239,8 @@
     font-size: 13px;
     line-height: 1.25;
     overflow-wrap: anywhere;
-  }
+    min-height: 2.5em;
+  
 
   .pcard-prices {
     width: 100%;
@@ -260,8 +261,8 @@
   .pcard-actions {
     position: relative;
     min-height: 44px;
-    margin-top: 12px;
-    padding: 0 8px;
+    margin-top: auto;
+    padding: 12px 8px 10px;
   }
 
   .pcard-btn {
