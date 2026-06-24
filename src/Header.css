@@ -345,16 +345,13 @@ a {
 
 @media (max-width: 560px) {
   body {
-    background: #e5e5e5;
+    background: #fff;
   }
 
   #root {
-    width: min(100%, 390px);
-    max-width: 390px;
-    margin: 0;
+    width: 100%;
     background: #fff;
     min-height: 100vh;
-    overflow: hidden;
   }
 
   .header-top-right {
@@ -528,4 +525,202 @@ a {
     line-height: 15px;
     text-align: center;
   }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+.mobile-menu {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100dvh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobile-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-fon);
+  padding: 0 20px;
+  min-height: 52px;
+  flex-shrink: 0;
+}
+
+.mobile-menu-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.mobile-menu-phone-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 20px 18px;
+  border-bottom: 1px solid #f0e8ed;
+}
+
+.mobile-menu-phone {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.mobile-menu-call {
+  background: var(--Maroon);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-family: "MuseoModerno", sans-serif;
+  cursor: pointer;
+}
+
+.mobile-menu-section {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f0e8ed;
+  padding: 10px 0;
+}
+
+.mobile-menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.mobile-menu-label {
+  font-size: 15px;
+  color: #333;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.mobile-menu-action {
+  font-size: 15px;
+  color: var(--Maroon);
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.mobile-menu-bookmarks {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-heart {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(16%) saturate(681%) hue-rotate(277deg) brightness(89%) contrast(84%);
+}
+
+.mobile-menu-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: var(--Maroon);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0e8ed;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  font-family: "MuseoModerno", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid #f0e8ed;
+  position: relative;
+}
+
+.mobile-menu-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu-link--arrow {
+  justify-content: space-between;
+}
+
+.mobile-menu-arrow {
+  font-size: 26px;
+  font-weight: 300;
+  color: #999;
+  line-height: 1;
+}
+
+.mobile-menu-link--accent {
+  color: var(--Maroon);
+  font-weight: 600;
+}
+
+.mobile-menu-contact-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(16%) saturate(681%) hue-rotate(277deg) brightness(89%) contrast(84%);
+}
+
+.mobile-menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  margin-top: auto;
+}
+
+.mobile-menu-social-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--Maroon);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobile-menu-social-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }

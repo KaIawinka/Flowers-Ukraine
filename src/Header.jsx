@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import './Header.css'
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header>
       <div className="header-top">
@@ -54,7 +57,7 @@ function Header() {
 
       <div className="header-main-wrap">
         <div className="header-main">
-          <button className="header-mobile-menu" aria-label="меню">
+          <button className="header-mobile-menu" aria-label="меню" onClick={() => setMenuOpen(true)}>
             <span></span>
             <span></span>
             <span></span>
@@ -128,6 +131,70 @@ function Header() {
           </div>
         </div>
       </div>
+
+      {menuOpen && (
+        <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
+          <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+            <div className="mobile-menu-head">
+              <span className="mobile-menu-title">Меню</span>
+              <button className="mobile-menu-close" onClick={() => setMenuOpen(false)}>✕</button>
+            </div>
+
+            <div className="mobile-menu-phone-row">
+              <span className="mobile-menu-phone">+38 (067) 829 30 30</span>
+              <button className="mobile-menu-call">Позвонить</button>
+            </div>
+
+            <div className="mobile-menu-section">
+              <div className="mobile-menu-row">
+                <span className="mobile-menu-label">Киев</span>
+                <span className="mobile-menu-action">Выбрать город</span>
+              </div>
+              <div className="mobile-menu-row">
+                <span className="mobile-menu-label">Закладки</span>
+                <div className="mobile-menu-bookmarks">
+                  <img src="/Love-logo.png" alt="" className="mobile-menu-heart" />
+                  <span className="mobile-menu-badge">2</span>
+                </div>
+              </div>
+              <div className="mobile-menu-row">
+                <span className="mobile-menu-label">Личный кабинет</span>
+                <span className="mobile-menu-action">Войти</span>
+              </div>
+            </div>
+
+            <nav className="mobile-menu-nav">
+              <a className="mobile-menu-link">Форум</a>
+              <a className="mobile-menu-link">Отзывы</a>
+              <a className="mobile-menu-link">Акции</a>
+              <a className="mobile-menu-link">Новости</a>
+              <a className="mobile-menu-link mobile-menu-link--arrow">
+                Информация
+                <span className="mobile-menu-arrow">›</span>
+              </a>
+              <a className="mobile-menu-link mobile-menu-link--accent">
+                <img src="/Call-logo.png" alt="" className="mobile-menu-contact-icon" />
+                Контакты
+              </a>
+            </nav>
+
+            <div className="mobile-menu-socials">
+              <div className="mobile-menu-social-icon">
+                <img src="/social-vk.png" alt="vk" />
+              </div>
+              <div className="mobile-menu-social-icon">
+                <img src="/social-instagram.png" alt="instagram" />
+              </div>
+              <div className="mobile-menu-social-icon">
+                <img src="/social-telegram.png" alt="telegram" />
+              </div>
+              <div className="mobile-menu-social-icon">
+                <img src="/social-facebook.png" alt="facebook" />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
