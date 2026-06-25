@@ -12,6 +12,10 @@ const sales = [
   { id: 2, img: '/product-2.png', title: '25 розовых пионовидных роз', price: 1680, oldPrice: 2800, discount: 10, isTop: true },
   { id: 3, img: '/product-3.png', title: 'Влюбленность', price: 1270, oldPrice: 2800, discount: 19, isTop: true },
   { id: 4, img: '/product-4.png', title: 'Корзина все для тебя', price: 2020, oldPrice: 2800, discount: 19, isTop: true },
+  { id: 5, img: '/product-5.png', title: 'Мечтательница', price: 2280, isTop: true },
+  { id: 6, img: '/product-6.png', title: 'Корзина солнечного настроения', price: 1680, isTop: true },
+  { id: 7, img: '/product-7.png', title: 'Цветочная клумба', price: 1270, isTop: true },
+  { id: 8, img: '/product-8.png', title: 'Корзина Дюймовочка', price: 2020, isTop: true },
 ]
 
 const seasonal = [
