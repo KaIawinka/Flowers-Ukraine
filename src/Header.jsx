@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 
-function Header({ onNavigate, currentPage }) {
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -63,9 +64,9 @@ function Header({ onNavigate, currentPage }) {
             <span></span>
           </button>
 
-          <div className="header-logo" onClick={() => onNavigate('home')} style={{ cursor: 'pointer' }}>
+          <Link to="/" className="header-logo">
             <img src="/Flowers-Ukraine.png" alt="Flowers Ukraine" />
-          </div>
+          </Link>
 
           <div className="header-center">
             <div className="header-search-row">
@@ -80,16 +81,12 @@ function Header({ onNavigate, currentPage }) {
             </div>
 
             <nav className="header-nav-row">
-              <a
-                className={currentPage === 'catalog' ? 'active' : ''}
-                onClick={() => onNavigate('catalog')}
-                style={{ cursor: 'pointer' }}
-              >Каталог товаров ▾</a>
-              <a style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Форум</a>
-              <a style={{ cursor: 'pointer' }}>Отзывы</a>
-              <a style={{ cursor: 'pointer' }}>Акции</a>
-              <a style={{ cursor: 'pointer' }}>Новости</a>
-              <a style={{ cursor: 'pointer' }}>Информация ▾</a>
+              <NavLink to="/catalog" className={({ isActive }) => isActive ? 'active' : ''}>Каталог товаров ▾</NavLink>
+              <Link to="/">Форум</Link>
+              <a>Отзывы</a>
+              <a>Акции</a>
+              <a>Новости</a>
+              <a>Информация ▾</a>
             </nav>
           </div>
 
@@ -168,7 +165,7 @@ function Header({ onNavigate, currentPage }) {
             </div>
 
             <nav className="mobile-menu-nav">
-              <a className="mobile-menu-link">Форум</a>
+              <Link className="mobile-menu-link" to="/" onClick={() => setMenuOpen(false)}>Форум</Link>
               <a className="mobile-menu-link">Отзывы</a>
               <a className="mobile-menu-link">Акции</a>
               <a className="mobile-menu-link">Новости</a>

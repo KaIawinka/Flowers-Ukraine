@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard'
 import './Catalog.css'
 
@@ -64,7 +65,7 @@ const FILTERS_POVOD = ['8 марта', 'День рождения', 'Свадь�
 
 const PER_PAGE = 6
 
-function Catalog({ onNavigate }) {
+function Catalog() {
   const [openCat, setOpenCat] = useState(0)
   const [activeSubCat, setActiveSubCat] = useState(null)
   const [sortOpen, setSortOpen] = useState(false)
@@ -82,7 +83,7 @@ function Catalog({ onNavigate }) {
   return (
     <div className="catalog">
       <div className="catalog-breadcrumb">
-        <span className="catalog-breadcrumb-link" onClick={() => onNavigate('home')}>Главная</span>
+        <Link className="catalog-breadcrumb-link" to="/">Главная</Link>
         <span className="catalog-breadcrumb-sep">›</span>
         <span>Каталог</span>
       </div>

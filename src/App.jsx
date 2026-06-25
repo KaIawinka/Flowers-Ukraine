@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import Hero from './Hero'
 import Benefits from './Benefits'
@@ -28,31 +28,28 @@ const gifts = [
   { id: 12, img: '/product-12.png', title: 'Торт на день рождения', price: 2020, isTop: true },
 ]
 
-function App() {
-  const [page, setPage] = useState('home')
-
-  const navigate = (target) => {
-    setPage(target)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
+function Home() {
   return (
     <>
-      <Header onNavigate={navigate} currentPage={page} />
+      <Hero />
+      <Benefits />
+      <ProductSection title="Акции" products={sales} />
+      <ProductSection title="Сезонные" products={seasonal} />
+      <ProductSection title="Подарки" products={gifts} />
+      <Forum />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Header />
       <main>
-        {page === 'home' && (
-          <>
-            <Hero />
-            <Benefits />
-            <ProductSection title="Акции" products={sales} />
-            <ProductSection title="Сезонные" products={seasonal} />
-            <ProductSection title="Подарки" products={gifts} />
-            <Forum />
-          </>
-        )}
-        {page === 'catalog' && (
-          <Catalog onNavigate={navigate} />
-        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+        </Routes>
       </main>
       <Footer />
     </>
