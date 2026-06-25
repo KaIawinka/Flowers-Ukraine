@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import Header from './Header'
 import Hero from './Hero'
 import Benefits from './Benefits'
 import ProductSection from './ProductSection'
 import Forum from './Forum'
 import Footer from './Footer'
+import Catalog from './Catalog'
 
 const sales = [
   { id: 1, img: '/product-1.png', title: '101 красная роза', price: 2280, oldPrice: 2800, discount: 19, isTop: true },
@@ -27,16 +29,30 @@ const gifts = [
 ]
 
 function App() {
+  const [page, setPage] = useState('home')
+
+  const navigate = (target) => {
+    setPage(target)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
-      <Header />
+      <Header onNavigate={navigate} currentPage={page} />
       <main>
-        <Hero />
-        <Benefits />
-        <ProductSection title="Акции" products={sales} />
-        <ProductSection title="Сезонные" products={seasonal} />
-        <ProductSection title="Подарки" products={gifts} />
-        <Forum />
+        {page === 'home' && (
+          <>
+            <Hero />
+            <Benefits />
+            <ProductSection title="Акции" products={sales} />
+            <ProductSection title="Сезонные" products={seasonal} />
+            <ProductSection title="Подарки" products={gifts} />
+            <Forum />
+          </>
+        )}
+        {page === 'catalog' && (
+          <Catalog onNavigate={navigate} />
+        )}
       </main>
       <Footer />
     </>

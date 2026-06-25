@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Header.css'
 
-function Header() {
+function Header({ onNavigate, currentPage }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -63,7 +63,7 @@ function Header() {
             <span></span>
           </button>
 
-          <div className="header-logo">
+          <div className="header-logo" onClick={() => onNavigate('home')} style={{ cursor: 'pointer' }}>
             <img src="/Flowers-Ukraine.png" alt="Flowers Ukraine" />
           </div>
 
@@ -80,12 +80,16 @@ function Header() {
             </div>
 
             <nav className="header-nav-row">
-              <a className="active">Каталог товаров ▾</a>
-              <a>Форум</a>
-              <a>Отзывы</a>
-              <a>Акции</a>
-              <a>Новости</a>
-              <a>Информация ▾</a>
+              <a
+                className={currentPage === 'catalog' ? 'active' : ''}
+                onClick={() => onNavigate('catalog')}
+                style={{ cursor: 'pointer' }}
+              >Каталог товаров ▾</a>
+              <a style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Форум</a>
+              <a style={{ cursor: 'pointer' }}>Отзывы</a>
+              <a style={{ cursor: 'pointer' }}>Акции</a>
+              <a style={{ cursor: 'pointer' }}>Новости</a>
+              <a style={{ cursor: 'pointer' }}>Информация ▾</a>
             </nav>
           </div>
 
