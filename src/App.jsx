@@ -45,12 +45,12 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-        </Routes>
-      </main>
+				<main>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/catalog" element={<Catalog />} />
+					</Routes>
+				</main>
       <Footer />
     </>
   )
