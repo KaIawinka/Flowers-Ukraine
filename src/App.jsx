@@ -28,7 +28,6 @@ const gifts = [
   { id: 12, img: '/product-12.png', title: 'Торт на день рождения', price: 2020, isTop: true },
 ]
 
-
 function Home() {
   return (
     <>
