@@ -73,6 +73,8 @@ function Catalog({ onNavigate }) {
   const [filterColor, setFilterColor] = useState(null)
   const [filterPovod, setFilterPovod] = useState(null)
   const [page, setPage] = useState(1)
+  const [filterModalOpen, setFilterModalOpen] = useState(false)
+  const [sortModalOpen, setSortModalOpen] = useState(false)
 
   const totalPages = Math.ceil(allProducts.length / PER_PAGE)
   const visible = allProducts.slice((page - 1) * PER_PAGE, page * PER_PAGE)
@@ -86,6 +88,83 @@ function Catalog({ onNavigate }) {
       </div>
 
       <h1 className="catalog-heading">Каталог товаров</h1>
+
+      <div className="catalog-mobile-toolbar">
+        <button className="catalog-mobile-btn catalog-mobile-btn--filter" onClick={() => setFilterModalOpen(true)}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          Фильтр
+        </button>
+        <button className="catalog-mobile-btn catalog-mobile-btn--sort" onClick={() => setSortModalOpen(true)}>
+          По популярности
+          <span className="catalog-filter-arrow">▼</span>
+        </button>
+      </div>
+
+      {filterModalOpen && (
+        <div className="catalog-modal-overlay" onClick={() => setFilterModalOpen(false)}>
+          <div className="catalog-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="catalog-modal-head">
+              <span className="catalog-modal-title">Фильтры</span>
+              <button className="catalog-modal-close" onClick={() => setFilterModalOpen(false)}>✕</button>
+            </div>
+            <div className="catalog-modal-body">
+              {categories.map((cat, i) => (
+                <div key={cat.label} className="catalog-modal-group">
+                  <div
+                    className={`catalog-modal-cat${openCat === i ? ' open' : ''}`}
+                    onClick={() => setOpenCat(openCat === i ? -1 : i)}
+                  >
+                    <span>{cat.label}</span>
+                    {cat.sub.length > 0 && <span className="catalog-modal-arrow">{openCat === i ? '∧' : '∨'}</span>}
+                  </div>
+                  {openCat === i && cat.sub.length > 0 && (
+                    <ul className="catalog-modal-sub">
+                      {cat.sub.map((sub) => (
+                        <li
+                          key={sub}
+                          className={`catalog-modal-sub-item${activeSubCat === sub ? ' active' : ''}`}
+                          onClick={() => setActiveSubCat(activeSubCat === sub ? null : sub)}
+                        >
+                          {activeSubCat === sub && <span className="catalog-modal-check">✓</span>}
+                          {sub}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="catalog-modal-footer">
+              <button className="catalog-modal-apply" onClick={() => setFilterModalOpen(false)}>Применить</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {sortModalOpen && (
+        <div className="catalog-modal-overlay" onClick={() => setSortModalOpen(false)}>
+          <div className="catalog-modal catalog-modal--sort" onClick={(e) => e.stopPropagation()}>
+            <div className="catalog-modal-head">
+              <span className="catalog-modal-title">Сортировка</span>
+              <button className="catalog-modal-close" onClick={() => setSortModalOpen(false)}>✕</button>
+            </div>
+            <ul className="catalog-modal-sort-list">
+              {SORT_OPTIONS.map((o) => (
+                <li
+                  key={o}
+                  className={`catalog-modal-sort-item${sort === o ? ' active' : ''}`}
+                  onClick={() => { setSort(o); setSortModalOpen(false) }}
+                >
+                  {o}
+                  {sort === o && <span className="catalog-modal-sort-check">✓</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
 
       <div className="catalog-layout">
         <aside className="catalog-sidebar">
